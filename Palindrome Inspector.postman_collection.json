@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "7ec03841-d4b6-42d9-a2ce-14330bc7d8ac",
+		"name": "Palindrome Inspector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19072851"
+	},
+	"item": [
+		{
+			"name": "Palindrome Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/palindrome/check?username=rmce&text=level",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"palindrome",
+						"check"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "rmce"
+						},
+						{
+							"key": "text",
+							"value": "level"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Inspection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/palindrome/check/rmce/level",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"palindrome",
+						"check",
+						"rmce",
+						"level"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear cache",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/palindrome/cache/clear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"palindrome",
+						"cache",
+						"clear"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
