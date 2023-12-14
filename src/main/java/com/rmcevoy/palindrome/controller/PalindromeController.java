@@ -19,9 +19,9 @@ public class PalindromeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PalindromeController.class);
     @Autowired
-    private PalindromeService palindromeService; //injection
+    private PalindromeService palindromeService; // Injection
     @Autowired
-    private PalindromeRepository palindromeRepository; //injection
+    private PalindromeRepository palindromeRepository;
 
     /**
      * Endpoint to check if a text is a palindrome.
@@ -34,17 +34,17 @@ public class PalindromeController {
             @RequestParam String username,
             @RequestParam String text) {
 
-        //check if the text is valid
+        // Check if the text is valid
         if (!PalindromeService.isValidText(text)) {
             return Responses.error(HttpStatus.BAD_REQUEST, "Invalid text");
         }
 
-        //check if the text is a parameter
+        // Check if the text is a parameter
         boolean isPalindrome = PalindromeService.isPalindrome(text);
 
         PalindromeCheck response = new PalindromeCheck(username, text, isPalindrome);
 
-        //save to database
+        // Save to database
         try {
             palindromeRepository.save(response);
             LOGGER.info("Record saved to database with id: " + response.getId());
@@ -66,7 +66,6 @@ public class PalindromeController {
     @GetMapping("/check/{username}/{text}")
     public ResponseEntity<?> getPalindromeByText(@PathVariable String username,
                                                  @PathVariable String text) {
-
         try {
 
             PalindromeCheck record;

@@ -27,8 +27,8 @@ public class PalindromeService {
         if (pStr.isEmpty()) {
             return false;
         }
-        char[] chars = pStr.toLowerCase().toCharArray(); //convert to lowercase char array
-        //loop through and check if each char is a letter. Return false if not
+        char[] chars = pStr.toLowerCase().toCharArray(); // Convert to lowercase char array
+        // Loop through and check if each char is a letter. Return false if not
         for (char c : chars) {
             if(!Character.isLetter(c)) {
                 return false;

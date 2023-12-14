@@ -39,7 +39,7 @@ class CacheControllerIT {
         // Mock the cache clearing
         doNothing().when(cache).clear();
 
-        // Perform the request and assert the response
+        // Perform the request and verify the response
         mockMvc.perform(MockMvcRequestBuilders.post("/palindrome/cache/clear")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())

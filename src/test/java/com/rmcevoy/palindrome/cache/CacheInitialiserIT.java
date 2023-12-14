@@ -67,19 +67,22 @@ class CacheInitialiserIT {
         Assertions.assertTrue(pOutput.getOut().contains("Cache initialised with 0 records"));
     }
 
+    /**
+     * Test cache initialisation when database is not empty.
+     * @param pOutput Used to verify the log output.
+     */
     @Test
     @DisplayName("Test cache when database isn't empty")
     void testCacheWhenDatabaseIsNotEmpty(CapturedOutput pOutput) {
 
-        //create PalindromeCheck object
+        // Create PalindromeCheck object
         PalindromeCheck palindromeCheck = new PalindromeCheck();
         palindromeCheck.setId("1");
         palindromeCheck.setUsername("rmce");
         palindromeCheck.setText("civic");
         palindromeCheck.setPalindrome(true);
 
-
-        // Mock the repository to return a non-empty list
+        // Mock the repository to return a non-empty list with created object
         when(palindromeRepository.findAll()).thenReturn((List<PalindromeCheck>) Collections.singletonList(palindromeCheck));
 
         // Mock the cache manager to return the cache
@@ -97,7 +100,7 @@ class CacheInitialiserIT {
         // Verify that the cache was populated
         Mockito.verify(cache).put(any(), any());
 
-        // Verify that the log message indicates a non-empty cache
+        // Verify that the log message indicates a non-empty cache using OutputCapture
         Assertions.assertTrue(pOutput.getOut().contains("Cache initialised with 1 records"));
     }
 }

@@ -18,13 +18,13 @@ public class ResponsesTest {
     @Test
     @DisplayName("Test 500 Response")
     public void testErrorResponse() {
-        //create expected response object
+        // Create expected response object
         ResponseEntity<?> expectedResponse = Responses.error(HttpStatus.INTERNAL_SERVER_ERROR, "Internal server error");
 
         assert(expectedResponse.getStatusCode() == HttpStatus.INTERNAL_SERVER_ERROR);
 
         Map<String, String> errorResponse = new HashMap<>();
-        errorResponse.put("error", "Internal server error");  // Use the provided message
+        errorResponse.put("error", "Internal server error");
 
         assertEquals(expectedResponse.getBody(), errorResponse);
 
@@ -33,7 +33,7 @@ public class ResponsesTest {
     @Test
     @DisplayName("Test 200 response")
     public void testSuccessResponse() {
-        //create expected response object
+        // Create expected response object
         ResponseEntity<?> expectedResponse = Responses.success("Success");
 
         assert(expectedResponse.getStatusCode() == HttpStatus.OK);

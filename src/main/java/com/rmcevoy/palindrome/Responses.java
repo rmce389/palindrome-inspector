@@ -22,7 +22,7 @@ public class Responses {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", pMessage);  // Use the provided message
 
-        //build a response with the status parameter and error response map
+        // Build a response with the status parameter and error response map
         return ResponseEntity.status(pStatus).body(errorResponse);
     }
 

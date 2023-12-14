@@ -53,7 +53,7 @@ public class CacheInitialiser implements ApplicationRunner {
             }
         }
 
-        //log the number of unique records in the cache
+        // Log the number of unique records in the cache
         LOGGER.info("Cache initialised with " + cacheCount + " records");
 
     }
