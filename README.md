@@ -6,6 +6,7 @@ Required to run:
 - The database is MongoDB Atlas. Access has been allowed for 1 week. Please contact me if there are any issues.
 
 Assume that a palindrome record is tied to a user. jbloggs with the text 'civic' is different to a jdoe with the text 'civic', and so retrieval of a record requires a username and text.
+ - It is acknowledged that the most desirable output is that the username and text not be linked however time constraints mean that this could be changed in a later version improving the memory usage of the cache/database. 
 
 To run, execute `build.sh` script found in the project directory.
 Tests can be executed with ```mvn test```. 
