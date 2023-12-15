@@ -5,6 +5,8 @@ Required to run:
 -  Maven
 - The database is MongoDB Atlas. Access has been allowed for 1 week. Please contact me if there are any issues.
 
+Assume that a palindrome record is tied to a user. jbloggs with the text 'civic' is different to a jdoe with the text 'civic', and so retrieval of a record requires a username and text.
+
 To run, execute `build.sh` script found in the project directory.
 Tests can be executed with ```mvn test```. 
 
